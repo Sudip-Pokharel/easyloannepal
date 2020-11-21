@@ -17,6 +17,7 @@
         color: $color-grey-dark !important;
         font-family: $heading-font-medium;
         padding: 0 .6rem 1rem;
+        // text-transform: uppercase;
         &::before {
             content: '';
             position: absolute;
