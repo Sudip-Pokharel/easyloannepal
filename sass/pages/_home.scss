@@ -1,0 +1,26 @@
+.about {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .content {
+            flex: 1 0 55%;
+            .paragraph {
+                padding-right: 4.8rem;
+            }
+        }
+        .image-box {
+            position: relative;
+            flex: 1 0 40%;
+            img {
+                width: 100%;
+                &.side-image {
+                    position: absolute;
+                    bottom: -8%;
+                    left: -45%;
+                }
+            }
+            
+        }
+    }
+}
