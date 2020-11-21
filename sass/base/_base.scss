@@ -9,17 +9,20 @@
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
-    @include media(767px) {
-        font-size: 55%;
-    }
 }
 
 body {
+    position: relative;
     box-sizing: border-box;
+    line-height: 1.7;
+    color: $color-grey-light-1;
+    font-family: $default-font;
+    font-size: $default-font-size;
 }
 
 ul {
     list-style-type: none;
+    margin-bottom: 0;
 }
 
 a:link,

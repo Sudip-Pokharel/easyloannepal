@@ -1,0 +1,44 @@
+.header {
+    .hero {
+        background-image: url('../img/hero-bg.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 10rem 0;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__content {
+            max-width: 60rem;
+            .btn-box {
+                .btn {
+                    &:not(:last-child) {
+                        margin-right: 1.2rem;
+                    }
+                }
+            }
+        }
+        &__form {
+            width: 48rem;
+            padding: 2.4rem 1.4rem 2.2rem 1.4rem;
+            background-color: $color-white;
+            border-radius: .3rem;
+            .btn-box {
+                margin: .8rem;
+            }
+        }
+        .input-group {
+            display: flex;
+            & > * {
+                flex: 1 0 50%;
+                padding: .8rem;
+                margin-bottom: .6rem;
+                &.flex-100 {
+                    flex: 1 0 100%;
+                }
+            }
+        }
+    }
+}

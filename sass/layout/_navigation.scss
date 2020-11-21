@@ -1,17 +1,54 @@
 .navigation {
-    padding: 3rem 0;
+    padding: 1.2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul {
+        display: flex;
+        align-items: center;
+    }
     &__item {
+        &:not(:last-child) {
+            margin-right: 4.8rem;
+        }
     }
     &__link {
+        position: relative;
+        color: $color-grey-dark !important;
+        font-family: $heading-font-medium;
+        padding: 0 .6rem 1rem;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: .2rem;
+            background-color: $color-primary-light-2;
+            transition: all .3s ease-in-out;
+        }
+        &:hover,
+        &.active-link {
+            &:not(.btn) {
+                color: $color-primary-light-2 !important;
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
 
     }
     #menu-trigger {
         position: relative;
+        display: block;
+        width: 5rem;
+        height: 4.2rem;
         span {
             position: absolute;
             left: 0;
             display: block;
-            width: 6rem;
+            width: 5rem;
             height: .6rem;
             background-color: $color-primary-light-2;
             &:nth-child(1) {
