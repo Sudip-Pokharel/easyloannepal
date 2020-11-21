@@ -21,4 +21,26 @@
            color: $color-grey-light-2 !important;
        }
    }
+   &--link {
+       padding: 0 0;
+       position: relative;
+       padding-bottom: .6rem;
+       &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: $color-secondary;
+            width: 40%;
+            height: .3rem;
+            transition: all .3s ease-in-out;
+       }
+       &:hover {
+            color: $color-grey-light-2 !important;
+            &::before {
+                width: 80%;
+                transition: all .3s ease-in-out;
+            }
+       }
+   }
 }

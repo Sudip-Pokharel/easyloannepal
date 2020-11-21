@@ -25,9 +25,8 @@ body {
         margin-bottom: 4rem;
     }
     &--medium {
-        font-size: 2.8rem;
+        font-size: 2.2rem;
         text-transform: capitalize;
-        // font-family: $heading-font-medium;
         margin-bottom: 2rem;
     }
     &--small {
@@ -48,6 +47,7 @@ body {
         font-size: 1.6rem;
         margin-bottom: 1rem;
         color: $color-primary-light-2;
+        line-height: 24px;
     }
   }
   
