@@ -10,24 +10,46 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @include media(991px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
         &__content {
             max-width: 60rem;
+            @include media(991px) {
+                margin-bottom: 7rem;
+                max-width: 54rem;
+                margin-right: auto;
+                margin-left: auto;
+            }
             .btn-box {
                 .btn {
                     &:not(:last-child) {
                         margin-right: 1.2rem;
+                        @include media(425px) {
+                            margin-right: 0;
+                            margin-bottom: 1.3rem;
+                        }
+                    }
+                    @include media(425px) {
+                        display: block;
                     }
                 }
             }
         }
         &__form {
-            width: 48rem;
+            max-width: 48rem;
             padding: 2.4rem 1.4rem 2.2rem 1.4rem;
             background-color: $color-white;
             border-radius: .3rem;
             .btn-box {
                 margin: .8rem;
+            }
+            @include media(991px) {
+                max-width: 54rem;
+                margin-right: auto;
+                margin-left: auto;
             }
         }
         .input-group {

@@ -1,5 +1,22 @@
-const faqLink = document.querySelectorAll('a.faq-box__item__link');
+const faqLink = document.querySelectorAll('a.faq-box__item__link'),
+    thisYear = document.getElementById('thisYear'),
+    menuTrigger = document.getElementById('menu-trigger'),
+    body = document.querySelector('body'),
+    mobileMenu = document.querySelector('.mobile-navigation');
 
+
+    menuTrigger.addEventListener('click', toggleMobileMenu)
+
+    function toggleMobileMenu(e) {
+        e.preventDefault()
+        body.classList.toggle('menu-open')
+        if(!body.classList.contains('menu-open')) {
+            mobileMenu.classList.add('close-menu')
+            setTimeout(function(){
+                mobileMenu.classList.remove('close-menu')
+            },450)
+        }
+    }
 
 function removeAllActiveLink(element) {
     element.forEach(function (link) {
@@ -19,3 +36,5 @@ faqLink.forEach(function (link) {
         }
     })
 })
+
+thisYear.innerHTML = new Date().getFullYear()
