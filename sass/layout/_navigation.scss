@@ -39,6 +39,7 @@
             height: .2rem;
             background-color: $color-primary-light-2;
             transition: all .3s ease-in-out;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
         }
         &:hover,
         &.active-link {

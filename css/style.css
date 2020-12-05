@@ -202,7 +202,7 @@ body {
   position: absolute;
   bottom: -10%;
   height: 2px;
-  background-color: #88CC44;
+  background-color: #88C417;
   width: 7rem; }
 
 .line-after.center::before {
@@ -234,7 +234,7 @@ body {
       display: block; } }
 
 .color-secondary {
-  color: #88CC44 !important; }
+  color: #88C417 !important; }
 
 .overlay {
   position: relative; }
@@ -368,7 +368,10 @@ body {
       background-color: #3589F1;
       -webkit-transition: all .3s ease-in-out;
       -o-transition: all .3s ease-in-out;
-      transition: all .3s ease-in-out; }
+      transition: all .3s ease-in-out;
+      -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7); }
     .navigation__link:hover, .navigation__link.active-link {
       color: #3589F1 !important; }
       .navigation__link:hover::before, .navigation__link.active-link::before {
@@ -552,21 +555,84 @@ body {
   padding: 1.2rem 3.2rem;
   font-size: 1.8rem;
   text-transform: uppercase;
+  border: none;
   border-radius: .2rem;
   font-family: "MavenPro-Medium", sans-serif; }
   .btn:focus {
     -webkit-box-shadow: none;
     box-shadow: none; }
   .btn--primary {
+    position: relative;
     background-color: #223060;
-    color: #FEFEFE !important; }
+    color: #FEFEFE !important;
+    z-index: 1; }
+    .btn--primary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: .2rem;
+      background-color: #3589F1;
+      -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      transform: scaleX(0);
+      z-index: 1;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
+      -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+      transform-origin: left;
+      -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7); }
     .btn--primary:hover {
       color: #FEFEFE !important; }
+      .btn--primary:hover::before {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+        z-index: -1; }
   .btn--secondary {
-    background-color: #88CC44;
-    color: #FEFEFE !important; }
+    position: relative;
+    background-color: #88C417;
+    color: #FEFEFE !important;
+    z-index: 1; }
+    .btn--secondary::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: .2rem;
+      background-color: #71da08;
+      -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      transform: scaleX(0);
+      z-index: 1;
+      -webkit-transition: -webkit-transform 0.5s;
+      transition: -webkit-transform 0.5s;
+      -o-transition: transform 0.5s;
+      transition: transform 0.5s;
+      transition: transform 0.5s, -webkit-transform 0.5s;
+      -webkit-transform-origin: left;
+      -ms-transform-origin: left;
+      transform-origin: left;
+      -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7); }
     .btn--secondary:hover {
       color: #FEFEFE !important; }
+      .btn--secondary:hover::before {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1);
+        z-index: -1; }
   .btn--link {
     padding: 0 0;
     position: relative;
@@ -576,19 +642,25 @@ body {
       position: absolute;
       bottom: 0;
       left: 0;
-      background-color: #88CC44;
+      background-color: #88C417;
       width: 40%;
       height: .3rem;
-      -webkit-transition: all .3s ease-in-out;
-      -o-transition: all .3s ease-in-out;
-      transition: all .3s ease-in-out; }
+      -webkit-transition: all .5s;
+      -o-transition: all .5s;
+      transition: all .5s;
+      -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+      transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7); }
     .btn--link:hover {
       color: #FEFEFE !important; }
       .btn--link:hover::before {
         width: 80%;
-        -webkit-transition: all .3s ease-in-out;
-        -o-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out; }
+        -webkit-transition: all .5s;
+        -o-transition: all .5s;
+        transition: all .5s;
+        -webkit-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        -o-transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7); }
 
 input {
   border: none;
@@ -772,12 +844,38 @@ input {
   .news__description {
     padding-top: 2rem; }
   .news__btn:hover {
-    color: #88CC44 !important; }
+    color: #88C417 !important; }
   .news:hover .news__title {
     -webkit-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
     color: #223060; }
+
+.blog {
+  display: grid;
+  grid-template-columns: -webkit-min-content 1fr;
+  grid-template-columns: min-content 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 3rem; }
+  .blog__published {
+    display: grid;
+    justify-items: center; }
+  .blog__date {
+    color: #88C417;
+    font-family: "MavenPro-Medium", sans-serif;
+    font-size: 1.8rem;
+    -ms-flex-item-align: end;
+    align-self: end; }
+  .blog__month {
+    color: #223060;
+    font-family: "MavenPro-Black", sans-serif;
+    font-size: 2rem;
+    -ms-flex-item-align: start;
+    align-self: start; }
+  .blog__btn {
+    font-size: 1.6rem; }
+    .blog__btn:hover {
+      color: #88C417 !important; }
 
 .apply {
   background-color: #fafafa; }

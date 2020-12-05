@@ -5,21 +5,67 @@
     padding: 1.2rem 3.2rem;
     font-size: 1.8rem;
     text-transform: uppercase;
+    border: none;
     border-radius: .2rem;
     font-family: $heading-font-medium;
     &--primary {
-       background-color: $color-primary;
-       color: $color-grey-light-2 !important;
-       &:hover {
-           color: $color-grey-light-2 !important;
-       }
+        position: relative;
+        background-color: $color-primary;
+        color: $color-grey-light-2 !important;
+        z-index: 1;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: .2rem;
+            background-color: $color-primary-light-2;
+            transform: scaleX(0);
+            z-index: 1;
+            transition: transform 0.5s;
+            transform-origin: left;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        }
+        &:hover {
+            color: $color-grey-light-2 !important;
+
+            &::before {
+                transform: scaleX(1);
+                z-index: -1;
+            }
+        }
    }
     &--secondary {
-       background-color: $color-secondary;
-       color: $color-grey-light-2 !important;
-       &:hover {
-           color: $color-grey-light-2 !important;
-       }
+        position: relative;
+        background-color: $color-secondary;
+        color: $color-grey-light-2 !important;
+        z-index: 1;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: .2rem;
+            background-color: $color-secondary-light-1;
+            transform: scaleX(0);
+            z-index: 1;
+            transition: transform 0.5s;
+            transform-origin: left;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+        }
+        &:hover {
+            color: $color-grey-light-2 !important;
+
+                &::before {
+                    transform: scaleX(1);
+                    z-index: -1;
+                }
+        }
    }
    &--link {
        padding: 0 0;
@@ -33,13 +79,15 @@
             background-color: $color-secondary;
             width: 40%;
             height: .3rem;
-            transition: all .3s ease-in-out;
+            transition: all .5s;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
        }
        &:hover {
             color: $color-grey-light-2 !important;
             &::before {
                 width: 80%;
-                transition: all .3s ease-in-out;
+                transition: all .5s;
+                transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
             }
        }
    }

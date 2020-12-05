@@ -163,7 +163,46 @@
     }
 }
 
+.blog {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 3rem;
 
+    &__published {
+        display: grid;
+        justify-items: center;
+    }
+
+    &__date {
+        color: $color-secondary;
+        font-family: $heading-font-medium;
+        font-size: 1.8rem;
+        align-self: end;
+    }
+
+    &__month {
+        color: $color-primary;
+        font-family: $heading-font-black;
+        font-size: 2rem;
+        align-self: start;
+    }
+
+    &__title {
+        // color: $color-primary;
+    }
+
+    &__description {
+
+    }
+
+    &__btn {
+        font-size: 1.6rem;
+        &:hover {
+            color: $color-secondary !important;
+        }
+    }
+}
 
 .apply {
     background-color: $color-light;
