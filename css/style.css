@@ -101,6 +101,11 @@ body {
     @media (max-width: 580px) {
       .heading--small {
         font-size: 1.6rem; } }
+  .heading--xsmall {
+    font-size: 1.6rem; }
+    @media (max-width: 580px) {
+      .heading--xsmall {
+        font-size: 1.5rem; } }
 
 .paragraph {
   font-size: 1.8rem;
@@ -124,6 +129,13 @@ body {
     @media (max-width: 580px) {
       .paragraph--small {
         font-size: 1.5rem; } }
+  .paragraph--xsmall {
+    font-size: 1.5rem;
+    margin-bottom: .8rem;
+    line-height: 22px; }
+    @media (max-width: 580px) {
+      .paragraph--xsmall {
+        font-size: 1.4rem; } }
 
 .text-center {
   text-align: center !important; }
@@ -222,7 +234,7 @@ body {
       display: block; } }
 
 .color-secondary {
-  color: #88CC44; }
+  color: #88CC44 !important; }
 
 .overlay {
   position: relative; }
@@ -368,14 +380,22 @@ body {
     height: 4.2rem; }
     .navigation #menu-trigger span {
       position: absolute;
+      background-color: #323232;
       left: 0;
-      display: block;
-      width: 4rem;
+      width: 100%;
       height: .4rem;
-      background-color: #323232; }
+      display: block;
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+      -webkit-transition: .2s ease-in-out;
+      -o-transition: .2s ease-in-out;
+      transition: .2s ease-in-out; }
       .navigation #menu-trigger span:nth-child(1) {
         top: 1rem; }
-      .navigation #menu-trigger span:nth-child(2) {
+      .navigation #menu-trigger span:nth-child(2), .navigation #menu-trigger span:nth-child(3) {
+        top: 2rem; }
+      .navigation #menu-trigger span:nth-child(4) {
         top: 3rem; }
 
 #mobile-menu {
@@ -417,25 +437,18 @@ body {
       font-family: "MavenPro-Medium", sans-serif; }
 
 @media (max-width: 991px) {
-  body.menu-open .navigation #menu-trigger span {
-    -webkit-transform-origin: center;
-    -ms-transform-origin: center;
-    transform-origin: center;
-    -webkit-transition: -webkit-transform .3s ease-in-out;
-    transition: -webkit-transform .3s ease-in-out;
-    -o-transition: transform .3s ease-in-out;
-    transition: transform .3s ease-in-out;
-    transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out; }
-    body.menu-open .navigation #menu-trigger span:nth-child(1) {
-      -webkit-transform: rotate(135deg);
-      -ms-transform: rotate(135deg);
-      transform: rotate(135deg);
-      top: 1.5rem; }
-    body.menu-open .navigation #menu-trigger span:nth-child(2) {
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transform: rotate(45deg);
-      top: 1.5rem; }
+  body.menu-open .navigation #menu-trigger span:nth-child(1), body.menu-open .navigation #menu-trigger span:nth-child(4) {
+    top: 2rem;
+    width: 0;
+    left: 50%; }
+  body.menu-open .navigation #menu-trigger span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  body.menu-open .navigation #menu-trigger span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
   body.menu-open #mobile-menu {
     -webkit-transform: translate3d(-30rem, 0, 0);
     transform: translate3d(-30rem, 0, 0);
@@ -737,6 +750,34 @@ input {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%); }
+
+.news-section {
+  background-color: #fafafa; }
+  .news-section .news-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+    grid-gap: 3.5rem; }
+
+.news {
+  padding: 3.2rem 2.4rem;
+  border-radius: .3rem;
+  -webkit-box-shadow: 0px 1rem 3rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1rem 3rem rgba(0, 0, 0, 0.1); }
+  .news__title {
+    padding-bottom: 1.2rem;
+    border-bottom: 1px solid #d4dde0;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out; }
+  .news__description {
+    padding-top: 2rem; }
+  .news__btn:hover {
+    color: #88CC44 !important; }
+  .news:hover .news__title {
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    color: #223060; }
 
 .apply {
   background-color: #fafafa; }

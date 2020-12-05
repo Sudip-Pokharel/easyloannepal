@@ -44,6 +44,12 @@ body {
             font-size: 1.6rem;
         }
     }
+    &--xsmall {
+        font-size: 1.6rem;
+        @include media(580px) {
+            font-size: 1.5rem;
+        }
+    }
 }
 
 .paragraph {
@@ -68,6 +74,14 @@ body {
         line-height: 24px;
         @include media(580px) {
             font-size: 1.5rem;
+        }
+    }
+    &--xsmall {
+        font-size: 1.5rem;
+        margin-bottom: .8rem;
+        line-height: 22px;
+        @include media(580px) {
+            font-size: 1.4rem;
         }
     }
   }
